@@ -1,0 +1,26 @@
+{
+  "name": "Jasmine",
+  "authors": [
+    "jacwu"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.5",
+    "jquery": "^2.2.3",
+    "requirejs": "^2.2.0",
+    "lodash": "^4.11.2",
+    "jasmine-core": "jasmine#^2.4.1",
+    "jasmine-jquery": "^2.1.1",
+    "jasmine-ajax": "^3.2.0"
+  }
+}
