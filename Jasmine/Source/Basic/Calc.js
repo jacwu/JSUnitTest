@@ -15,5 +15,10 @@ Calculator.prototype.mul = function(a, b) {
 };
 
 Calculator.prototype.divide = function(a, b) {
-	return a / b;
+    if(b === 0){
+        throw 'b should not be zero';
+    }
+    else{
+        return a / b;
+    }
 };

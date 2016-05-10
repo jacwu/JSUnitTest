@@ -36,19 +36,17 @@ module.exports = function(config) {
     exclude: [
       '*.bmp'
     ],
-
-    pattern: 'Source/**/*.html',
     
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        'Source/**/*.js': ['coverage']
     },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'junit', 'html', 'coverage'],
 
 
     // web server port
@@ -70,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'PhantomJS'],
 
 
     // Continuous Integration mode
@@ -79,6 +77,19 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+    
+    junitReporter: {
+            outputDir: './output/junit'            
+    },
+    
+    htmlReporter:{
+        outputDir: './output/html'
+    },
+    
+    coverageReporter:{
+        type: 'html',
+        dir: './output/coverage'
+    }
   })
 }
