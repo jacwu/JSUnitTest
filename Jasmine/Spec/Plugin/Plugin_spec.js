@@ -13,8 +13,13 @@ describe("Jasmine Jquery Plugin Test", function () {
     });
     
     describe("loadFixtures", function () {    
-        beforeEach(function(){
-            jasmine.getFixtures().fixturesPath = 'fixtures';
+        beforeEach(function(){            
+            var path = '';
+            if(typeof window.__karma__ !== 'undefined'){
+                path += 'base';
+            }
+            
+            jasmine.getFixtures().fixturesPath = path + '/Spec/Fixtures';
             loadFixtures('PluginFixture.html');
         });
         
@@ -54,7 +59,7 @@ describe("Jasmine Ajax Plugin Test ", function(){
       describe("stubRequest", function () {    
         beforeEach(function() {
             jasmine.getFixtures().fixturesPath = 'fixtures';
-            loadFixtures('PluginFixture.html');
+            setFixtures('<div id="container"></div><button id="btn" onclick="ChangeContainerText()">Click</button>');
             
             jasmine.Ajax.install();
             
