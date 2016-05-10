@@ -19,6 +19,7 @@ describe("Jasmine Jquery Plugin Test", function () {
                 path += 'base';
             }
             
+            
             jasmine.getFixtures().fixturesPath = path + '/Spec/Fixtures';
             loadFixtures('PluginFixture.html');
         });
