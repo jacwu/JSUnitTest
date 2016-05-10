@@ -80,16 +80,16 @@ module.exports = function(config) {
     concurrency: Infinity,
     
     junitReporter: {
-            outputDir: './output/junit'            
+            outputDir: './report_output/junit'            
     },
     
     htmlReporter:{
-        outputDir: './output/html'
+        outputDir: './report_output/html'
     },
     
     coverageReporter:{
         type: 'html',
-        dir: './output/coverage'
+        dir: './report_output/coverage'
     }
   })
 }
