@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="PwdCtrl">
+        <input type="text" ng-model="password">
+        <button ng-click="grade();">Check Password Strength</button>
+        {{strength}}
+        <br/>
+        <div>
+            Password Length: {{password | lengthFilter}}
+        </div>
+    </div>
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="myAngular.js"></script>
+</body>
+</html>
