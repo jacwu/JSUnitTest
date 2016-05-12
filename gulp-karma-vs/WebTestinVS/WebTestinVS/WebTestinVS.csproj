@@ -43,6 +43,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="gulpfile.js" />
+    <Content Include="karma.conf.js" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
@@ -62,10 +64,38 @@
   <ItemGroup>
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Source\Angular\myAngular.js" />
+    <Content Include="Source\Angular\myDOM.html" />
+    <Content Include="Source\Async\Person.js" />
+    <Content Include="Source\Basic\Calc.js" />
+    <Content Include="Source\CustomEquality\Duck.js" />
+    <Content Include="Source\Plugin\operate.js" />
+    <Content Include="Source\Spies\CarAssemble.js" />
+    <Content Include="Source\Spies\InfoMgr.js" />
+    <Content Include="Spec\Angular\myAngular_spec.js" />
+    <Content Include="Spec\Angular\SpecRunner.html" />
+    <Content Include="Spec\Async\Person_spec.js" />
+    <Content Include="Spec\Async\SpecRunner.html" />
+    <Content Include="Spec\Basic\Calc_spec.js" />
+    <Content Include="Spec\Basic\SpecRunner.html" />
+    <Content Include="Spec\BuiltinMatcher\BuiltinMatcher_spec.js" />
+    <Content Include="Spec\BuiltinMatcher\SpecRunner.html" />
+    <Content Include="Spec\CustomEquality\CustomEquality_spec.js" />
+    <Content Include="Spec\CustomEquality\SpecRunner.html" />
+    <Content Include="Spec\CustomMatcher\CustomMatcher_spec.js" />
+    <Content Include="Spec\CustomMatcher\SpecRunner.html" />
+    <Content Include="Spec\Fixtures\PluginFixture.html" />
+    <Content Include="Spec\Plugin\Plugin_spec.js" />
+    <Content Include="Spec\Plugin\SpecRunner.html" />
+    <Content Include="Spec\Spies\SpecRunner.html" />
+    <Content Include="Spec\Spies\Spies_spec.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -105,8 +135,7 @@
   </Target>-->
   <Target Name="AfterBuild">
     <Exec Command="npm install" />
-  <Exec Command="bower install" />
-  <Exec Command="gulp testonce" />
+    <Exec Command="bower install" />
+    <Exec Command="gulp testonce" />
   </Target>
-  
 </Project>
