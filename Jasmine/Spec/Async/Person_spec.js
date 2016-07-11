@@ -25,6 +25,7 @@ describe("Test Async", function () {
             done();
         }, 3000);
         
+        
         jasmine.clock().tick(3000);
         
     });

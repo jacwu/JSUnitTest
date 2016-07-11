@@ -15,13 +15,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [ 
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',  
-      'bower_components/jquery/dist/jquery.js', 
+      'bower_components/angular-mocks/angular-mocks.js', 
       'bower_components/jasmine-ajax/lib/mock-ajax.js',
       'bower_components/jasmine-jquery/lib/jasmine-jquery.js', 
-      'Source/**/*.js',
-      'Spec/**/*.js',
+      'Source/Angular/**/*.js',
+      'Spec/Angular/**/*.js',
       {
           pattern: 'Spec/**/*.html',
           watched: true,
@@ -50,7 +50,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 9876,
+    port: 9877,
 
 
     // enable / disable colors in the output (reporters and logs)
@@ -59,7 +59,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -68,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
