@@ -1,16 +1,20 @@
 (function () {
     "use strict";
     angular.module('angular.directive')
-      .directive('counterDirective', function() {
+      .directive('basicDirective', function() {
         return {
-          controller: 'MyController',
-          template: '<div  ng-controller="MyController"' +
-                    '      ng-click="counter = counter + 1">' +
+          controller: ['$scope', CounterDirectiveCtrl],
+          template: '<div' +
+                    '      ng-click="onclick()">' +
                     'You\'ve clicked this div {{counter}} times' +
                     '</div>'
         }
-      })
-      .controller('MyController', function($scope) {
-        $scope.counter = 0;
       });
+    
+    function CounterDirectiveCtrl($scope){
+        $scope.counter = 0;
+        $scope.onclick = function () {
+          $scope.counter += 1;
+        }
+      };
 }());

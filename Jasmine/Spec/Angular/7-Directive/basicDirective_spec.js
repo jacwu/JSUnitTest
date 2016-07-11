@@ -1,4 +1,4 @@
-describe('counterDirective', function() {
+describe('Test basicDirective', function() {
   var injector;
   var element;
   var scope;
@@ -12,7 +12,7 @@ describe('counterDirective', function() {
       scope = $rootScope.$new();
 
       // Compile some HTML that uses the directive
-      element = $compile('<counter-directive></counter-directive>')(scope);
+      element = $compile('<basic-directive></basic-directive>')(scope);
       scope.$digest();
     });
   });
