@@ -4,7 +4,6 @@ describe('Test basicDirective', function() {
   var scope;
 
   beforeEach(function() {
-    // Create a new dependency injector using the 'myApp' module
     module('angular.directive');
 
     inject(function($rootScope, $compile) {
