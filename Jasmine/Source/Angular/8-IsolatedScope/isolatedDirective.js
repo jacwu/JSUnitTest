@@ -4,7 +4,10 @@
       .directive('isolatedDirective', function() {
         return {
           restrict: 'E',
-          scope: {twoway: '='}       
+          scope: {
+            twoway: '=',
+            oneway: '@',
+            notifyParent: '&notify'}       
         }
       });
 }());

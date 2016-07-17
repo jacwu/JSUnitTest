@@ -1,5 +1,5 @@
 // basic service
-describe('test basicService in clean mode ', function (){
+describe('test basicService with clean module ', function (){
   var basicService;
   
   // excuted before each "it" is run.
