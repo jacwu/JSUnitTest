@@ -9,7 +9,7 @@ describe('Test basicDirective', function() {
       // Get a new scope
       scope = $rootScope.$new();
       scope.twoway = {book: 'typescript'};
-      scope.onNotify = jasmine.createSpy('onChange');
+      scope.onNotify = jasmine.createSpy('onNotify');
 
       // Compile some HTML that uses the directive
       element = $compile(angular.element('<isolated-directive twoway="twoway" oneway="true" notify="onNotify()"></isolated-directive>'))(scope);
@@ -17,7 +17,7 @@ describe('Test basicDirective', function() {
     });
   });
 
-  it(' two way binding on isolated scoped', function(){
+  it('two way binding on isolated scoped', function(){
     var isolatedScope = element.isolateScope();
     expect(isolatedScope.twoway.book).toEqual('typescript');
     isolatedScope.twoway.book = "webapi";

@@ -1,5 +1,4 @@
 describe('Test basicDirective', function() {
-  var injector;
   var element;
   var scope;
 
