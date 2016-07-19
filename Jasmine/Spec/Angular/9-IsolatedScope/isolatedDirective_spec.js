@@ -17,28 +17,22 @@ describe('Test basicDirective', function() {
     });
   });
 
-  it('two way binding on isolated scoped', function(){
+  it('two way binding on isolated scope', function(){
     var isolatedScope = element.isolateScope();
     expect(isolatedScope.twoway.book).toEqual('typescript');
     isolatedScope.twoway.book = "webapi";
     expect(scope.twoway.book).toEqual('webapi');
   });
 
-  it('notify on isolated scope should be one-way bound', function(){
+  it('one way binding on isolated scope', function(){
     var isolatedScope = element.isolateScope();
     expect(isolatedScope.oneway).toEqual('true');
   });
 
-  it('onChange should be a function', function(){
+  it('should call onNotify method of scope when invoked from isolated scope', function () {
       var isolatedScope = element.isolateScope();
-
       expect(typeof(isolatedScope.notifyParent)).toEqual('function');
-  });
-
-  it('should call onChange method of scope when invoked from isolated scope', function () {
-      var isolatedScope = element.isolateScope();
       isolatedScope.notifyParent();
-
       expect(scope.onNotify).toHaveBeenCalled();
   });
 });
