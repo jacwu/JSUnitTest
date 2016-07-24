@@ -1,6 +1,11 @@
 describe('Test with controller', function (){
   var $scope, $controller;
 
+  beforeEach(function(){
+    module('angular.controller.service');
+    module('angular.controller.mainapp');
+  });
+
   describe('BasicCtrl', function(){
       function validation(){
           $scope.name = 'Javascript';
@@ -10,7 +15,6 @@ describe('Test with controller', function (){
       };
 
       it('fake service by injection', function (){
-        module('angular.controller.service');
         module(function($provide){
           basicServiceMock = {
             changeMessage: function(msg){
@@ -20,8 +24,6 @@ describe('Test with controller', function (){
 
           $provide.value('basicService', basicServiceMock);
         });
-        
-        module('angular.controller.mainapp');
 
         inject(function (_$controller_) {
           $controller = _$controller_;        
@@ -34,8 +36,6 @@ describe('Test with controller', function (){
       });
 
       it('fake service by argument', function () {
-        module('angular.controller.mainapp');
-
         inject(function (_$controller_) {
           $controller = _$controller_;        
         });
@@ -53,8 +53,6 @@ describe('Test with controller', function (){
     });
 
     it('use ngMock $rootScope when apply or digest is needed for the scope', function (){
-        module('angular.controller.mainapp');
-
         inject(function (_$controller_, _$rootScope_) {
           $controller = _$controller_;    
           $scope = _$rootScope_.$new();    
@@ -76,8 +74,6 @@ describe('Test with controller', function (){
     var $childScope;
 
     beforeEach(function(){
-        module('angular.controller.mainapp');
-
         inject(function (_$controller_, _$rootScope_) {
           $controller = _$controller_;       
           $scope = _$rootScope_.$new(); 
