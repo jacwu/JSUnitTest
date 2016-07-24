@@ -1,4 +1,4 @@
-describe('test service with dependency in non-unit test mode', function (){
+describe('test service with dependency as integration mode', function (){
   var basicService;
   
   beforeEach(function (){

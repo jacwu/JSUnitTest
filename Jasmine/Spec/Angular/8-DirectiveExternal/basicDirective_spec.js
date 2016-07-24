@@ -1,3 +1,5 @@
+// only for karma
+
 describe('Test basicDirective', function() {
   var element;
   var scope;

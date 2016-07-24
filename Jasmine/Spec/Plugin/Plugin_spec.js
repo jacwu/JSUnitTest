@@ -49,9 +49,8 @@ describe("Jasmine Ajax Plugin Test ", function(){
                it("myCallback should be called on",function(){
                    expect(request.method).toBe('GET');       
                    expect(myCallback).not.toHaveBeenCalled(); 
-                   expect(request.url).toBe('/site/test');
-                   myText = "Hello World";       
-                   request.respondWith({"success": myCallback(myText)});    
+                   expect(request.url).toBe('/site/test');      
+                   request.respondWith({"responseText": "Hello World"});    
                    expect(myCallback).toHaveBeenCalled();    
                    expect(myCallback).toHaveBeenCalledWith("Hello World");
                });  
