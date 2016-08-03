@@ -14,7 +14,7 @@ describe("Test Async", function () {
     });
 });
 
-describe("Test Async", function () {
+describe("Test Async with clock tick", function () {
     
     var p = new Person();
     

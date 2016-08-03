@@ -70,20 +70,19 @@ describe('Test with controller', function (){
     });
   });
 
-  describe('NestedCtrl', function () {
-    var $childScope;
+  describe('nested controller', function () {
+    var $childScope, $parentScope;
 
     beforeEach(function(){
         inject(function (_$controller_, _$rootScope_) {
           $controller = _$controller_;       
-          $scope = _$rootScope_.$new(); 
+          $parentScope = _$rootScope_.$new();
+          $childScope = $parentScope.$new(); 
         });
     });
 
-    it('should set rootScope properties', function () {
-      $childScope = $scope.$new();
-      $scope.query = 'jasmine';
-      
+    it('child scope can access the field of parent scope', function () {     
+      $parentScope.query = 'jasmine';     
       $controller('NestedCtrl', {
         $scope: $childScope
       });

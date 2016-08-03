@@ -23,5 +23,8 @@ describe("Custom Equality Test", function () {
         
         var duck = new Duck();
         expect(d).toEqual(duck);
+
+        d.canSwim = false;
+        expect(d).not.toEqual(duck);
     })
 })

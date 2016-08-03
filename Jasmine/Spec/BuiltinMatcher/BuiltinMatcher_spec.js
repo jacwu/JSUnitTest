@@ -64,11 +64,11 @@ describe("Built in matchers:", function () {
   });
 
   it("toBeCloseTo", function() {
-    var pi = 3.1415926,
-      e = 2.78;
+    var a = 3.78,
+      b = 3.76;
 
-    expect(pi).not.toBeCloseTo(e, 2);
-    expect(pi).toBeCloseTo(e, 0);
+    expect(a).not.toBeCloseTo(b, 2);
+    expect(a).toBeCloseTo(b, 1);
   });
 
   it("toThrow", function() {

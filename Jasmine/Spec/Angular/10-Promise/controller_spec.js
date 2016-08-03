@@ -23,8 +23,10 @@ describe('promise test with controller', function (){
   
   it('promise should work after apply', function (){
     var myCtrl = $controller('basicCtrl', {$scope: $scope});
+    $scope.ready = false;
     $scope.getData('test.com');
-    $scope.$apply();
+    expect($scope.ready).toBeFalsy();
+    $scope.$apply(); // propagate the changeg to the model
     expect($scope.ready).toBeTruthy();
   });
 });

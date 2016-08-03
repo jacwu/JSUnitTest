@@ -22,5 +22,9 @@ describe('Test basicDirective', function() {
     element.find('div').click();
     
     expect(element.text()).toEqual('You\'ve clicked this div 1 times');
+
+    element.find('div').click();
+    
+    expect(element.text()).toEqual('You\'ve clicked this div 2 times');
   });
 });

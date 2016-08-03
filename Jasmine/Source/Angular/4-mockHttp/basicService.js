@@ -13,8 +13,8 @@
                     getBookInfo: function(bookUrl) {
                         return $http.get(bookUrl)
                             .then(function(result) {
-                            return basicSubService.changeSubMessage(result.data.book.title);
-                        });
+                                return basicSubService.changeSubMessage(result.data.book.title);
+                            });
                     }
             };
         });

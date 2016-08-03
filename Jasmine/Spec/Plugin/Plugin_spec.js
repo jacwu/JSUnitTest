@@ -58,7 +58,6 @@ describe("Jasmine Ajax Plugin Test ", function(){
       
       describe("stubRequest", function () {    
         beforeEach(function() {
-            jasmine.getFixtures().fixturesPath = 'fixtures';
             setFixtures('<div id="container"></div><button id="btn" onclick="ChangeContainerText()">Click</button>');
             
             jasmine.Ajax.install();
@@ -82,10 +81,9 @@ describe("Jasmine Ajax Plugin Test ", function(){
         it("success call back should be called", function(){ 
                 spyOn($, "ajax").and.callFake(function(e) {                 
                     e.success("hello world");             
-                });           
-                var myCallback;           
-                myCallback = jasmine.createSpy();           
-                showError = jasmine.createSpy();             
+                });                     
+                var myCallback = jasmine.createSpy();           
+                var showError = jasmine.createSpy();             
                 ajaxRequestWithJQuery(myCallback,showError);             
                 expect(myCallback).toHaveBeenCalled();
                 expect(myCallback).toHaveBeenCalledWith("hello world");              
